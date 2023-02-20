@@ -44,7 +44,7 @@ def getTrackName(item):
 #   the track title followed by the artist name
 def sendPlaylisttoTxt(results):
 
-    playlistName = results['name']
+    playlistName = strRename(results['name']).strip()
     tracks = results['tracks']
     
     with open(f"{playlistName}.txt", 'a', encoding='utf-8') as playlistFile:

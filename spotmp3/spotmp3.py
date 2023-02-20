@@ -24,7 +24,7 @@ def playlisttomp3(url):
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 
     results = sp.playlist(playlist_id=id, fields="tracks,next,name")
-    fileName = results['name']
+    fileName = playlistPull.strRename(results['name']).strip()
 
     downloadPath = os.path.join(os.path.expanduser('~'), f'downloads\{fileName}')
 
